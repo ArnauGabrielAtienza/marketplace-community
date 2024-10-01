@@ -33,3 +33,24 @@ jobs:
         with:
           name: parsed_issue
           path: parsed_issue.yaml
+
+      - name: Add Success Label
+        id: add-success
+        uses: issue-ops/labeler@v2.0.0
+        with:
+          action: add
+          issue_number: ${{ github.event.issue.number }}"
+          labels: accepted
+  
+  failed_parse:
+    runs-on: ubuntu-latest
+    needs: parse_issue
+    if: failure()
+    steps:
+      - name: Add Failure Label
+        id: add-failure
+        uses: issue-ops/labeler@v2.0.0
+        with:
+          action: add
+          issue_number: ${{ github.event.issue.number }}"
+          labels: failed
