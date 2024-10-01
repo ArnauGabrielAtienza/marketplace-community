@@ -7,7 +7,7 @@ on:
 
 jobs:
   parse_issue:
-    if: startsWith(github.event.label.name, 'parse')
+    if: startsWith(github.event.label.name, 'accepted')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
