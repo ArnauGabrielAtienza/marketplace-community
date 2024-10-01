@@ -1,18 +1,16 @@
 name: New Extension Submission Form
 description: A form to submit a new extension to be reviewed and entered in the catalog
 labels: ["received"]
+
 body:
-- type: markdown
-  attributes:
-    value: |
-      Thank you for submitting your Extension to the Catalog
 - type: input
   id: name
   attributes:
-    label: Publisher Name
-    description: The publisher of the extension. This can be you or your company name.
+    label: Extension Name
+    description: The name of your extension.
   validations:
     required: true
+
 - type: input
   id: version
   attributes:
@@ -20,6 +18,15 @@ body:
     description: The version of your extension
   validations:
     required: true
+
+- type: input
+  id: publisher
+  attributes:
+    label: Publisher Name
+    description: The publisher of the extension. This can be you or your company name.
+  validations:
+    required: true
+
 - type: textarea
   id: description
   attributes:
@@ -27,6 +34,7 @@ body:
     description: A long description of your extension, supports markdown
   validations:
     required: true
+
 - type: input
   id: short_description
   attributes:
@@ -34,6 +42,31 @@ body:
     description: A short description that will show on the card in the catalog
   validations:
     required: false
+
+- type: input
+  id: tags
+  attributes:
+    label: tags
+    description: The tags which describe this extension to make it easier to find in the catalog when searching. Use comma separated values.
+  validations:
+    required: true
+
+- type: input
+  id: date
+  attributes:
+    label: Extension creation date
+    description: The date that the extension was first created. Follow the following format: DD-MM-YYYY
+  validations:
+    required: true
+
+- type: input
+  id: dependencies
+  attributes:
+    label: dependencies
+    description: List of external libraries that your extension needs. Use comma separated values.
+  validations:
+    required: false
+
 - type: dropdown
   id: type
   attributes:
@@ -46,6 +79,7 @@ body:
     default: 0
   validations:
     required: true
+
 - type: dropdown
   id: southbound_type
   attributes:
@@ -59,6 +93,19 @@ body:
       - Authentication
       - Market
       - IPAM
+
+- type: dropdown
+  id: format
+  attributes:
+    label: Archive format
+    description: Format of the archive. Currently supported: targz, tarxz, tarbz2, tar, zip.
+    options:
+      - targz
+      - tarxz
+      - tarbz2
+      - tar
+      - zip
+
 - type: dropdown
   id: versions
   attributes:
@@ -70,24 +117,22 @@ body:
       - 6.8
       - 6.10
       - 7.0
-- type: input
-  id: tags
-  attributes:
-    label: Tags
-    description: The tags which describe this extension to make it easier to find in the catalog when searching. Comma separated list
+
 - type: input
   id: documentation_url
   attributes:
     label: Documentation URL
-    description: A URL to the documentation which covers the usage of your extension
+    description: A URL to the documentation which covers the usage of your extension. You add multiple URLs using comma separated values.
+
 - type: input
   id: source_code_url
   attributes:
     label: Source Code URL
-    description: A URL to the source code of your extension
+    description: A URL to the source code of your extension.
+    
 - type: input
   id: extra_information
   attributes:
     label: Extra Information for OpenNebula
-    description: Use this to provide us with any extra context you would like to provide to us
+    description: Use this to provide us with any extra context you would like to provide to us.
 
