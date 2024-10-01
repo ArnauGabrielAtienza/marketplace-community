@@ -1,7 +1,7 @@
 name: Process issue
 on:
   issues:
-    types: opened
+    types:
       - labeled
 
 concurrency: 'main'
