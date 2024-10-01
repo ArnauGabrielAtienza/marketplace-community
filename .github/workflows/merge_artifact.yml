@@ -28,3 +28,5 @@ jobs:
           run-id: ${{ github.event.inputs.issue_number }}
 
       - run: ls -la
+
+      - run: cat parsed_issue
