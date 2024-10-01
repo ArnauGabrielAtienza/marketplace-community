@@ -14,7 +14,7 @@ jobs:
       - uses: stefanbuck/github-issue-praser@v3
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/new_form.yml
+          template-path: .github/ISSUE_TEMPLATE/new_form.yaml
 
       - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > issue.json
 
