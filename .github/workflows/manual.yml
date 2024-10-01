@@ -24,4 +24,4 @@ jobs:
           input: issue.json
           output: parsed_issue.yaml
 
-      - run: cat parsed_issue.json
+      - run: cat parsed_issue.yaml
