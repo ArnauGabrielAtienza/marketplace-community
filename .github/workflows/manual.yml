@@ -9,7 +9,7 @@ jobs:
   place_order:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: stefanbuck/github-issue-praser@v3
         id: issue-parser
@@ -18,4 +18,10 @@ jobs:
 
       - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > issue.json
 
-      - run: cat issue.json
+      - name: JSON to YAML
+        uses: NeddM/JSON-to-YAML@v1
+        with:
+          input: issue.json
+          output: parsed_issue.yaml
+
+      - run: cat parsed_issue.json
