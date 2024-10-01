@@ -2,11 +2,13 @@ name: Process issue
 on:
   issues:
     types: opened
+      - labeled
 
 concurrency: 'main'
 
 jobs:
-  place_order:
+  parse_issue:
+    if: startsWith(github.event.label.name, 'parse')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
