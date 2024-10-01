@@ -27,12 +27,12 @@ jobs:
           github-token: ${{ secrets.GIT_TOKEN }}
           run-id: ${{ github.event.inputs.run }}
 
-      - name: List artifact
+      - name: List artifact directory
         run: ls -la parsed_issue
 
       - name: Add artifact
         run: |
-          git mv parsed_issue/parsed_issue.yaml appliances/service/.
+          mv parsed_issue/parsed_issue.yaml appliances/service/.
           git add appliances/service/parsed_issue.yaml
           
       - name : Push artifact
