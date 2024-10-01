@@ -55,7 +55,7 @@ body:
   id: date
   attributes:
     label: Extension creation date
-    description: The date that the extension was first created. Follow the following format: DD-MM-YYYY
+    description: "The date that the extension was first created. Follow the following format: DD-MM-YYYY"
   validations:
     required: true
 
@@ -98,7 +98,7 @@ body:
   id: format
   attributes:
     label: Archive format
-    description: Format of the archive. Currently supported: targz, tarxz, tarbz2, tar, zip.
+    description: "Format of the archive. Currently supported: targz, tarxz, tarbz2, tar, zip."
     options:
       - targz
       - tarxz
