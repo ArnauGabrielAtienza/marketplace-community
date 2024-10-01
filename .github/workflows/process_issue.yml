@@ -11,12 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: stefanbuck/github-issue-praser@v3
-        id: issue-parser
+      - name: Parse issue
+        id: parse
+        uses: onmax/issue-form-parser@v1.5
         with:
-          template-path: .github/ISSUE_TEMPLATE/new_form.yaml
+          issue_number: ${{ github.event.issue.number }}
 
-      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > issue.json
+      - run: echo '${{ steps.parse.outputs.payload }}' > issue.json
 
       - name: JSON to YAML
         uses: NeddM/JSON-to-YAML@v1
