@@ -1,0 +1,11 @@
+name: test
+version: "1.0"
+description: test
+short_description: short test
+type: Southbound
+southbound_type: Storage
+versions: "7.0"
+tags: storage,south
+documentation_url: "1"
+source_code_url: "2"
+extra_information: "3"
