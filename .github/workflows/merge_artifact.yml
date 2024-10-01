@@ -7,6 +7,9 @@ on:
       run:
         description: 'Run-id number associated with the artifact'
         required: true
+      file_name:
+        description: 'Name to assign to the yaml service file'
+        required: true
       git_email:
         description: 'Email associated with your GitHub accout'
         required: true
@@ -32,8 +35,8 @@ jobs:
 
       - name: Add artifact
         run: |
-          mv parsed_issue/parsed_issue.yaml appliances/service/.
-          git add appliances/service/parsed_issue.yaml
+          mv parsed_issue/parsed_issue.yaml appliances/service/${{ github.event.inputs.file_name }}
+          git add appliances/service/${{ github.event.inputs.file_name }}
           
       - name : Push artifact
         run: |
