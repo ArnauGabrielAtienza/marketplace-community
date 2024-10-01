@@ -4,8 +4,6 @@ on:
     types:
       - labeled
 
-concurrency: 'main'
-
 jobs:
   parse_issue:
     if: startsWith(github.event.label.name, 'parse')
