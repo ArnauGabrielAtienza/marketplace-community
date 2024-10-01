@@ -3,17 +3,20 @@ name: Push Artifact
 on:
   workflow_dispatch:
     inputs:
+      issue:
+        description: 'Issue id'
+        required: true
       run:
         description: 'Run-id number associated with the artifact'
         required: true
       file_name:
-        description: 'Name to assign to the yaml service file'
-        required: true
-      git_email:
-        description: 'Email associated with your GitHub accout'
+        description: 'Name for the yaml index file'
         required: true
       git_user:
         description: 'Username associated with your GitHub accout'
+        required: true
+      git_email:
+        description: 'Email associated with your GitHub accout'
         required: true
 
 jobs:
@@ -42,3 +45,11 @@ jobs:
           git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+      - name: Add Merged Label
+        id: add-labels
+        uses: issue-ops/labeler@v2.0.0
+        with:
+          action: add
+          issue_number: ${{ github.event.inputs.issue }}
+          labels: merged
