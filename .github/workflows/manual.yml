@@ -29,3 +29,15 @@ jobs:
         with:
           name: parsed_issue
           path: parsed_issue.yaml
+
+  merge_issue:
+    if: startsWith(github.event.label.name, 'merge')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+
+      - run: ls -la
