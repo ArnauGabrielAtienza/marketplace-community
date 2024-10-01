@@ -1,11 +1,15 @@
-name: test
-version: "1.0"
-description: test
-short_description: short test
-type: Southbound
-southbound_type: Storage
-versions: "7.0"
-tags: storage,south
-documentation_url: "1"
-source_code_url: "2"
-extra_information: "3"
+Extension Name: test
+Version: test
+Publisher Name: test
+Long Description: test
+Short Description: _No response_
+tags: '- name: Add Failure Label         id: add-labels         uses: issue-ops/labeler@v2.0.0         with:           action: add           issue_number: ${{ github.event.issue.number }}"           labels: failed'
+Extension creation date: 1/1/2000
+dependencies: _No response_
+Extension Type: Northbound
+Southbound Extension Type: None
+Archive format: None
+OpenNebula Versions: _No response_
+Documentation URL: _No response_
+Source Code URL: _No response_
+Extra Information for OpenNebula: _No response_
