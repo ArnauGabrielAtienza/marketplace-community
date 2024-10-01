@@ -25,7 +25,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: parsed_issue.yaml
-          run_id: ${{ github.event.inputs.issue_number }}
 
       - name: Commit and push the artifact
         run: |
