@@ -1,4 +1,4 @@
-name: Process order
+name: Process issue
 on:
   issues:
     types: opened
@@ -14,8 +14,8 @@ jobs:
       - uses: stefanbuck/github-issue-praser@v3
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/order-pizza.yml
+          template-path: .github/ISSUE_TEMPLATE/new_form.yml
 
-      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > order.json
+      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > issue.json
 
-      - run: cat order.json
+      - run: cat issue.json
