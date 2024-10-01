@@ -1,6 +1,5 @@
 name: New Extension Submission Form
 description: A form to submit a new extension to be reviewed and entered in the catalog
-labels: ["received"]
 
 body:
 - type: input
